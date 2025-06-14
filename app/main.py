@@ -5,13 +5,13 @@ from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 from sqlalchemy.orm import Session
 from .models import Base, engine, SessionLocal, PersonnelRecord
-
-Base.metadata.create_all(bind=engine)
-
 from .utils import generate_qr_code
 from .models import PersonnelRecord
 from uuid import uuid4
 from datetime import datetime
+
+# CREATE ALL TABLES ON STARTUP
+Base.metadata.create_all(bind=engine)
 
 def import_personnel_records(db):
     data = [
