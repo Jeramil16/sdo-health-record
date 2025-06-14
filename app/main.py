@@ -28,12 +28,13 @@ def get_db():
         db.close()
 
 @app.get("/", response_class=HTMLResponse)
-def index(request: Request, db: Session = next(get_db())):
+from fastapi import Depends
+def index(request: Request, db: Session = Depends (get_db)):
     records = db.query(PersonnelRecord).all()
     return templates.TemplateResponse("index.html", {"request": request, "records": records})
 
 @app.get("/view/{token}", response_class=HTMLResponse)
-def view_by_token(token: str, request: Request, db: Session = next(get_db())):
+def view_by_token(token: str, request: Request, db: Session = Depends(get_db)):
     record = db.query(PersonnelRecord).filter(PersonnelRecord.qr_token == token).first()
     if not record:
         return HTMLResponse("Invalid or expired token", status_code=404)
