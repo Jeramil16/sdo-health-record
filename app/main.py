@@ -3166,6 +3166,8 @@ def import_personnel_records(db):
                 record_date=datetime.today().date(),
                 qr_token=str(uuid4())
             )
+     for entry in data:
+            record = PersonnelRecord(**entry)
             db.add(record)
     db.commit()
 
@@ -3179,6 +3181,7 @@ templates = Jinja2Templates(directory="app/templates")
 
 # Create DB tables
 Base.metadata.create_all(bind=engine)
+import_personnel_records(SessionLocal())
 
 # Dependency
 def get_db():
