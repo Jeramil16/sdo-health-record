@@ -1,0 +1,13 @@
+
+<!DOCTYPE html>
+<html>
+<head><title>Health Records</title></head>
+<body>
+    <h1>Personnel Records</h1>
+    <ul>
+    {% for r in records %}
+        <li>{{ r.name }} - <a href="/view/{{ r.qr_token }}">QR View</a></li>
+    {% endfor %}
+    </ul>
+</body>
+</html>
