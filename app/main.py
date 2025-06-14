@@ -3195,6 +3195,6 @@ def view_by_token(token: str, request: Request, db: Session = Depends(get_db)):
     if not record:
         return HTMLResponse("Invalid or expired token", status_code=404)
     return templates.TemplateResponse("view.html", {"request": request, "record": record})
-from .database import Sessionlocal
+from app.models import Sessionlocal
 db = SessionLocal()
 import_personnel_records(dB)
