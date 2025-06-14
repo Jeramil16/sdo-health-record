@@ -2139,7 +2139,7 @@ def import_personnel_records(db):
             "employee_number": "4325693",
             "name": "RONALDO M. LUGOD",
             "unit_office": "RECORDS SECTION",
-            "position": "DIVISION LIAISON OFFICER
+            "position": "DIVISION LIAISON OFFICER"
 ADMINISTRATIVE ASSISTANT I",
             "dob": "04/04/1967",
             "phn": "14-100040010-8",
