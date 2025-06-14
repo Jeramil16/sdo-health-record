@@ -2140,7 +2140,7 @@ def import_personnel_records(db):
             "name": "RONALDO M. LUGOD",
             "unit_office": "RECORDS SECTION",
             "position": "DIVISION LIAISON OFFICER"
-ADMINISTRATIVE ASSISTANT I",
+"ADMINISTRATIVE ASSISTANT I",
             "dob": "04/04/1967",
             "phn": "14-100040010-8",
             "tin": "173-703-732",
