@@ -3197,4 +3197,4 @@ def view_by_token(token: str, request: Request, db: Session = Depends(get_db)):
     return templates.TemplateResponse("view.html", {"request": request, "record": record})
 from app.database import SessionLocal
 db = SessionLocal()
-import_personnel_records(dB)
+import_personnel_records(db)
