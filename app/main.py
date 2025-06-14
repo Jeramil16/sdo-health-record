@@ -5,7 +5,9 @@ from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 from sqlalchemy.orm import Session
 from .models import Base, engine, SessionLocal, PersonnelRecord
+
 Base.metadata.create_all(bind=engine)
+
 from .utils import generate_qr_code
 from .models import PersonnelRecord
 from uuid import uuid4
