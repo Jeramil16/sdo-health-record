@@ -1,5 +1,5 @@
 
-from fastapi import FastAPI, Request, Form
+from fastapi import FastAPI, Request, Form, Depends
 from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
@@ -28,7 +28,6 @@ def get_db():
         db.close()
 
 @app.get("/", response_class=HTMLResponse)
-from fastapi import Depends
 def index(request: Request, db: Session = Depends (get_db)):
     records = db.query(PersonnelRecord).all()
     return templates.TemplateResponse("index.html", {"request": request, "records": records})
