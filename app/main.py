@@ -3166,9 +3166,9 @@ def import_personnel_records(db):
                 record_date=datetime.today().date(),
                 qr_token=str(uuid4())
             )
-     for entry in data:
-            record = PersonnelRecord(**entry)
-            db.add(record)
+    for entry in data:
+        record = PersonnelRecord(**entry)
+        db.add(record)
     db.commit()
 
 import os
