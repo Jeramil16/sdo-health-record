@@ -3171,9 +3171,9 @@ def import_personnel_records(db):
         db.add(record)
     db.commit()
 
-import_personnel_records(SessionLocal())
-
 import os
+
+import_personnel_records(SessionLocal())
 
 app = FastAPI()
 
