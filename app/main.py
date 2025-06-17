@@ -10,7 +10,6 @@ from .models import PersonnelRecord
 from uuid import uuid4
 from datetime import datetime
 
-# CREATE ALL TABLES ON STARTUP
 Base.metadata.create_all(bind=engine)
 import_personnel_records(SessionLocal())
 
